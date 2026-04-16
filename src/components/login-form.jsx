@@ -15,55 +15,98 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
+import React from "react"
 
 export function LoginForm({
   className,
   ...props
 }) {
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card>
-        <CardHeader>
-          <CardTitle>Entrar com sua conta</CardTitle>
-          <CardDescription>
-            Insira seu e-mail abaixo para acessar sua conta.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form>
-            <FieldGroup>
-              <Field>
-                <FieldLabel htmlFor="email">Email</FieldLabel>
-                <Input id="email"
-                 type="email" 
-                 placeholder="m@example.com"
-                 required
-                 />
-              </Field>
-              <Field>
-                <div className="flex items-center">
-                  <FieldLabel htmlFor="password">Senha</FieldLabel>
-                  <Link
-                    href="/frontend/src/app/recuperar-senha/page.jsx"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
-                    Esqueceu a senha?
-                  </Link>
-                </div>
-                <Input id="password" type="password" required />
-              </Field>
-              <Field>
-                <Button type="submit">Login</Button>
-                <Button variant="outline" type="button">
-                  Login com Google
-                </Button>
-                <FieldDescription className="text-center">
-                  Não tenho conta? <Link href="/frontend/src/app/cadastro/page.jsx">Cadastrar-me</Link>
-                </FieldDescription>
-              </Field>
-            </FieldGroup>
-          </form>
-        </CardContent>
-      </Card>
+    <div className="min-h-screen bg-gradient-to-r from-purple-200 to-blue-200 flex flex-col">
+
+      <header className="w-full flex justify-center mt-6">
+        <div className="w-[90%] flex items-center justify-between px-8 py-4 bg-white/70 backdrop-blur rounded-2xl">
+          <img
+            src="https://img.freepik.com/vetores-gratis/logotipo-da-empresa-de-tecnologia-de-abstracao-gradiente_52683-9702.jpg"
+            alt="Logo"
+            className="h-10"
+            style={{ borderRadius: "30%" }}
+          />
+
+          <nav className="flex gap-8">
+            <Link href="/">Início</Link>
+            <Link href="#sobre">Sobre</Link>
+            <Link href="#servicos">Serviços</Link>
+            <Link href="#contato">Contato</Link>
+          </nav>
+
+          <Link
+            href="/cadastro"
+            className="bg-pink-500 text-white px-4 py-2 rounded-full"
+          >
+            Sign Up
+          </Link>
+        </div>
+      </header>
+
+      <div className={cn("flex flex-1 items-center justify-center mt-10 p-6", className)} {...props}>
+        <Card className="w-full max-w-md">
+          <CardHeader>
+            <CardTitle>Entrar com sua conta</CardTitle>
+            <CardDescription>
+              Insira seu e-mail abaixo para acessar sua conta.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form>
+              <FieldGroup>
+                <Field>
+                  <FieldLabel htmlFor="email">Email</FieldLabel>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="m@example.com"
+                    required
+                  />
+                </Field>
+                <Field>
+                  <div className="flex items-center">
+                    <FieldLabel htmlFor="password">Senha</FieldLabel>
+                    <Link
+                      href="/recuperar-senha"
+                      className="ml-auto text-sm hover:underline"
+                    >
+                      Esqueceu a senha?
+                    </Link>
+                  </div>
+                  <Input id="password" type="password" required />
+                </Field>
+                <Field>
+                  <Button type="submit" className="w-full mb-2">Login</Button>
+                  <Button variant="outline" type="button" className="w-full mb-2">
+                    Login com Google
+                  </Button>
+                  <FieldDescription className="text-center">
+                    Não tenho conta? <Link href="/cadastro">Cadastrar-me</Link>
+                  </FieldDescription>
+                </Field>
+              </FieldGroup>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+
+      <footer className="w-full flex justify-center mt-10 mb-4">
+        <div className="w-[90%] bg-white/70 backdrop-blur rounded-2xl px-8 py-6 flex flex-col md:flex-row justify-between items-center text-sm">
+          <p>© 2026 Notas Fáceis. Todos os direitos reservados.</p>
+          <div className="flex gap-6 mt-2 md:mt-0">
+            <Link href="#">Privacidade</Link>
+            <Link href="#">Termos</Link>
+            <Link href="#">Contato</Link>
+          </div>
+        </div>
+      </footer>
+
     </div>
-  );
+  )
 }
