@@ -16,6 +16,8 @@ import {
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import React from "react"
+import Image from "next/image"
+import logo from "../components/img/logoOfc.jpg";
 
 export function LoginForm({
   className,
@@ -26,11 +28,12 @@ export function LoginForm({
 
       <header className="w-full flex justify-center mt-6">
         <div className="w-[90%] flex items-center justify-between px-8 py-4 bg-white/70 backdrop-blur rounded-2xl">
-          <img
-            src="https://img.freepik.com/vetores-gratis/logotipo-da-empresa-de-tecnologia-de-abstracao-gradiente_52683-9702.jpg"
-            alt="Logo"
-            className="h-10"
-            style={{ borderRadius: "30%" }}
+          <Image
+              src={logo}
+              alt="Logo"
+              width={40}          
+              height={40} 
+              style={{ borderRadius: "30%" }}
           />
 
           <nav className="flex gap-8">

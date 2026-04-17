@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import logo from "../components/img/logoOfc.jpg";
 
 export default function Home() {
   return (
@@ -10,12 +11,14 @@ export default function Home() {
       <header className="w-full flex justify-center mt-6">
         <div className="w-[90%] flex justify-between items-center p-6 bg-white/70 backdrop-blur rounded-2xl">
           
-          <img
-            src="https://img.freepik.com/vetores-gratis/logotipo-da-empresa-de-tecnologia-de-abstracao-gradiente_52683-9702.jpg"
+          <Image
+            src={logo}
             alt="Logo"
-            className="h-10"
+            width={40}  
+            height={40} 
             style={{ borderRadius: "30%" }}
           />
+
 
           <nav className="flex gap-6">
             <Link href="#">Inicio</Link>
@@ -44,22 +47,34 @@ export default function Home() {
 
 
       <main className="flex flex-1 items-center justify-between px-10 mt-10">
-        <div className="max-w-md">
-          <h2 className="text-4xl font-bold mb-4">Notas Rápidas</h2>
-          <p className="text-gray-700 mb-6">
-            Organize suas ideias de forma simples, rápida e prática.
-          </p>
 
-          <Link
-            href="/login"
-            className="inline-block bg-purple-600 text-white px-6 py-3 rounded-full"
-          >
-            Começar
-          </Link>
-        </div>
+  <div className="max-w-md">
+    <h2 className="text-4xl font-bold mb-4">Notas Rápidas</h2>
+    <p className="text-gray-700 mb-6">
+      Organize suas ideias de forma simples, rápida e prática.
+    </p>
 
-        
-      </main>
+    <Link
+      href="/cadastro"
+      className="inline-block bg-purple-600 text-white px-6 py-3 rounded-full"
+    >
+      Começar
+    </Link>
+  </div>
+
+
+  <div className="max-w-md bg-white/70 backdrop-blur p-6 rounded-2xl shadow-md">
+    <h3 className="text-2xl font-semibold mb-4">Notas Faceis</h3>
+    <p className="text-gray-700 leading-relaxed">
+      A ideia foi criar um protótipo de bloco de notas online, onde você pode
+      escrever suas ideias e guardar tudo em um só lugar. O objetivo é ter um
+      espaço que não só armazene suas anotações, mas também ajude a lembrar
+      delas depois. É como ter um caderno digital sempre à mão, fácil de
+      acessar e organizado.
+    </p>
+  </div>
+</main>
+
 
 
       <footer className="w-full flex justify-center mt-10 mb-4">
