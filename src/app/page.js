@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-200 to-blue-200 flex flex-col">
       
-      {/* HEADER PADRÃO */}
+
       <header className="w-full flex justify-center mt-6">
         <div className="w-[90%] flex justify-between items-center p-6 bg-white/70 backdrop-blur rounded-2xl">
           
@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* CONTEÚDO */}
+
       <main className="flex flex-1 items-center justify-between px-10 mt-10">
         <div className="max-w-md">
           <h2 className="text-4xl font-bold mb-4">Notas Rápidas</h2>
